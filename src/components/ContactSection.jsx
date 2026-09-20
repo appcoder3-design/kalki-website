@@ -28,7 +28,7 @@ export default function ContactSection() {
         <span className="eyebrow">Let&apos;s talk trade</span>
         <h2>Good business<br /><em>starts here.</em></h2>
         <p>Tell us what you&apos;re looking for and where your team is based in Singapore. We&apos;ll come back with the right next step.</p>
-        <a className="whatsapp-link" href="https://wa.me/6582090884?text=Hello%20Kalki%20Business%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noreferrer"><span className="whatsapp-icon">◔</span> Message us on WhatsApp <span>↗</span></a>
+        <a className="whatsapp-link" href="https://wa.me/6582090884?text=Hello%20Kalki%20Business%2C%20I%20would%20like%20to%20enquire%20about%20your%20products.%20My%20contact%20number%20is%20%5Byour%20number%5D%20and%20my%20email%20is%20%5Byour%20email%5D." target="_blank" rel="noreferrer"><span className="whatsapp-icon">◔</span> Message us on WhatsApp <span>↗</span></a>
       </div>
       <div className="contact-form-wrap">
         {submitted ? (

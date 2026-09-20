@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <Link className="brand" to="/" aria-label="Kalki Business home">
-        <img className="brand-logo" src="/images-logo/Kalki%20logo.jpg" alt="Kalki Business logo" />
+        <img className="brand-logo" src="/images-logo/Kalki%20logo.png" alt="Kalki Business logo" />
       </Link>
       <nav className="main-nav" aria-label="Main navigation">
         <a href="/#categories">What we supply</a>
