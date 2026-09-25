@@ -32,7 +32,7 @@ export default function ContactSection() {
       </div>
       <div className="contact-form-wrap">
         {submitted ? (
-          <div className="form-success"><span>✓</span><h3>Thanks, we&apos;ll be in touch.</h3><p>Your enquiry is safely with the Kalki Business team in Singapore.</p><button type="button" onClick={() => setSubmitted(false)}>Send another message</button></div>
+          <div className="form-success"><span>✓</span><h3>Thanks, we&apos;ll be in touch.</h3><p>Your enquiry is with the Kalki Business team in Singapore.</p><button type="button" onClick={() => setSubmitted(false)}>Send another message</button></div>
         ) : (
           <form className="contact-form" onSubmit={handleSubmit}>
             <label>Name<input name="name" required placeholder="Your name" /></label>

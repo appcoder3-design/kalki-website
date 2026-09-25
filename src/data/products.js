@@ -19,6 +19,26 @@ export const categories = [
     accent: '#dfeec7',
     products: ['Soyabean meal', 'Soyabean oil', 'Whole soyabeans', 'Industrial and feed supply'],
   },
+  {
+    slug: 'almonds',
+    eyebrow: 'India-sourced premium mamra Almond nuts',
+    name: 'Almonds',
+    shortName: 'Almonds',
+    description: 'Premium almonds sourced from India for foodservice, retail and wholesale buyers looking for dependable quality and consistent supply.',
+    image: '/Product%20Images/Almonds.jpg',
+    accent: '#d9c6a0',
+    products: ['Whole almonds', 'Salted almonds'],
+  },
+  {
+    slug: 'cashew',
+    eyebrow: 'India-sourced high quality cashew nuts',
+    name: 'Cashew',
+    shortName: 'Cashew',
+    description: 'Premium cashew nuts sourced from India for foodservice and retail with assurance of reliable supply and consistent quality',
+    image: '/Product%20Images/Cashew.jpg',
+    accent: '#e6c29b',
+    products: ['Whole cashew nuts', 'Salted cashew nuts'],
+  },
 ]
 
 export const getCategory = (slug) => categories.find((category) => category.slug === slug)
