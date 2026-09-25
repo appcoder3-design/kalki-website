@@ -17,6 +17,7 @@ function ScrollToTop() {
 
 function CursorGlow() {
   const [pointer, setPointer] = useState({ x: 0, y: 0, visible: false, clicked: false, color: '#10265f' })
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
 
   const getContrastColor = (element) => {
     const style = element ? window.getComputedStyle(element) : null
@@ -39,6 +40,27 @@ function CursorGlow() {
   }
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(hover: none), (pointer: coarse)')
+    const updateTouchState = () => setIsTouchDevice(mediaQuery.matches)
+
+    updateTouchState()
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateTouchState)
+    } else {
+      mediaQuery.addListener(updateTouchState)
+    }
+
+    if (mediaQuery.matches) {
+      return () => {
+        if (mediaQuery.removeEventListener) {
+          mediaQuery.removeEventListener('change', updateTouchState)
+        } else {
+          mediaQuery.removeListener(updateTouchState)
+        }
+      }
+    }
+
     const handlePointerMove = (event) => {
       const target = document.elementFromPoint(event.clientX, event.clientY)
       const color = getContrastColor(target)
@@ -67,8 +89,16 @@ function CursorGlow() {
       window.removeEventListener('pointerleave', handlePointerLeave)
       window.removeEventListener('pointerdown', handlePointerDown)
       window.clearTimeout(handlePointerDown.timeout)
+
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', updateTouchState)
+      } else {
+        mediaQuery.removeListener(updateTouchState)
+      }
     }
   }, [])
+
+  if (isTouchDevice) return null
 
   return (
     <div
